@@ -9,6 +9,8 @@ $(document).ready(function(){
       });
   });
 
+  /*==================== FROM HEADER TO PROJECTS ====================*/
+
   $(window).scroll(function(){
     if($(window).scrollTop()){
       $("nav").addClass("blu");
@@ -16,3 +18,16 @@ $(document).ready(function(){
       $("nav").removeClass("blu");
     }
   });
+
+  /*==================== SHOW MENU ====================*/
+var navMenu, navToggle, navClose
+
+navToggle = document.getElementById( 'nav-toggle' );
+navClose = document.getElementById( 'nav-close' );
+navMenu = document.getElementById( 'nav-menu' );
+
+if(navToggle) {
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
