@@ -24,7 +24,10 @@ var navMenu, navToggle, navClose
 
 navToggle = document.getElementById( 'nav-toggle' );
 navClose = document.getElementById( 'nav-close' );
-navMenu = document.getElementById( 'nav-menu' );
+navMenu = document.getElementById( 'container' );
+
+//Uncaught TypeError: Cannot read property 'classList' of null
+//at HTMLDivElement.<anonymous> (main.js:31)
 
 if(navToggle) {
     navToggle.addEventListener('click', () =>{

@@ -36,85 +36,44 @@ header {
   position: relative;
 }
 
-header nav {
+.navbar {
   position: fixed;
   top: 0px;
   width: 100%;
 }
 
-header nav .container {
-  width: 80%;
+.navbar .container {
+  width: 75%;
   height: 100%;
   margin: 0 auto;
+  right: -100;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header nav .container .navbar__logo {
+.navbar .container .navbar__logo {
   padding: 20px 30px;
 }
 
-header nav .container .menu-btn {
-  display: none;
-}
-
-header nav .container .menu-btn:checked ~ .navbar__menu {
-  max-height: 240px;
-}
-
-header nav .container .menu-btn:checked ~ .menu-icon .nav-icon {
-  background: transparent;
-}
-
-header nav .container .menu-btn:checked ~ .menu-icon .nav-icon:before {
-  transform: rotate(-45deg);
-  top: 0px;
-}
-
-header nav .container .menu-btn:checked ~ .menu-icon .nav-icon:after {
-  transform: rotate(45deg);
-  top: 0px;
-}
-
-header nav .container .menu-icon {
-  padding: 25px 20px;
+.navbar .container .navbar__menu {
   position: relative;
-  cursor: pointer;
 }
 
-header nav .container .menu-icon .nav-icon {
-  background: red;
-  display: block;
-  height: 2px;
-  width: 15px;
-  position: relative;
-  transition: background .2s ease-out;
+@media screen and (max-width: 767px) {
+  .navbar .container .navbar__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
+    padding: 3rem;
+    transition: .4s;
+  }
 }
 
-header nav .container .menu-icon .nav-icon:before {
-  background: grey;
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  top: 5px;
-}
-
-header nav .container .menu-icon .nav-icon:after {
-  background: grey;
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  top: -5px;
-}
-
-header nav .container .navbar__menu {
+.navbar .container .navbar__menu .navbar__menu-items {
   margin: 0;
   padding-bottom: 90px;
   padding-left: 30px;
@@ -122,14 +81,17 @@ header nav .container .navbar__menu {
   font-family: 'GothamBook';
   color: #ffffff;
   font-size: 20px;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
 }
 
-header nav .container .navbar__menu li {
+.navbar .container .navbar__menu .navbar__menu-items li {
   display: inline-block;
   text-transform: uppercase;
 }
 
-header nav .container .navbar__menu li a {
+.navbar .container .navbar__menu .navbar__menu-items li a {
   height: 100%;
   color: #ffffff;
   display: block;
@@ -137,47 +99,37 @@ header nav .container .navbar__menu li a {
   text-decoration: none;
 }
 
-header nav .container .navbar__menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
+.navbar .container .nav-close {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-header nav .container .navbar__social-media {
-  height: 60px;
-  width: 100px;
-  padding: 10px;
+.show-menu {
+  right: 0;
 }
 
-header nav .container .navbar__social-media ul {
-  height: 100%;
-  width: 100%;
-  background-color: coral;
-}
-
-header nav .container .navbar__social-media ul li {
-  font-size: 20px;
-}
-
-header h1 {
+h1 {
   font-family: 'gothambold1';
   color: #ffffff;
   font-size: 90px;
 }
 
-header p {
+p {
   font-family: 'GothamBook';
   color: #ffffff;
   font-size: 30px;
 }
 
-header .about-us__slogan {
+.about-us__slogan {
   height: 120 px;
   width: 100%;
   text-align: center;
 }
 
-header .about-us__scroll-down {
+.about-us__scroll-down {
   height: 50px;
   width: 50px;
   border: 2px solid white;
@@ -188,7 +140,7 @@ header .about-us__scroll-down {
   cursor: pointer;
 }
 
-header .about-us__scroll-down:before {
+.about-us__scroll-down:before {
   content: '';
   position: absolute;
   top: 20%;
@@ -202,7 +154,7 @@ header .about-us__scroll-down:before {
   animation: about-us__scroll-down 1s ease-in-out infinite;
 }
 
-header .about-us__scroll-down:after {
+.about-us__scroll-down:after {
   content: '';
   position: absolute;
   top: 20%;
@@ -216,7 +168,7 @@ header .about-us__scroll-down:after {
   animation: about-us__scroll-down 1s ease-in-out infinite;
 }
 
-header .about-us__scroll-down:after {
+.about-us__scroll-down:after {
   top: 10%;
   animation-delay: .2s;
 }
@@ -432,9 +384,15 @@ footer {
     clear: none;
     float: right;
     max-height: none;
+    right: -100%;
   }
   .menu-icon {
     display: none;
   }
+}
+
+.show-menu {
+  right: 0;
+  color: red;
 }
 /*# sourceMappingURL=main.css.map */
