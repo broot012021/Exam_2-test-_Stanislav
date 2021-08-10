@@ -23,6 +23,8 @@ body {
         scroll-behavior: smooth;
 }
 
+//-----HEADER-----//
+
 header {
         background: url('/img/aboutUs1.png'), url('/img/aboutUs2.png');
         background-repeat: no-repeat, no-repeat;
@@ -34,133 +36,138 @@ header {
         align-items: center;
         justify-content: center;
         position: relative;
+}
+        //-----NAVBAR-----//
+.navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+        
+    .container {
+        width: 75%;
+        height: 100%;
+        margin: 0 auto;
+        right: -100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .navbar__logo {
+            padding: 20px 30px;
+        }
+        
+                //.menu-btn {
+                //    display: none;
+                //    
+                //    &:checked ~ .navbar__menu {
+                //        max-height: 240px;                
+                //    }
+                //
+                //    &:checked ~ .menu-icon .nav-icon {
+                //        background: transparent;
+                //
+                //        &:before {
+                //            transform: rotate(-45deg);
+                //            top: 0px;
+                //        }
+                //               
+                //        &:after {
+                //            transform: rotate(45deg);
+                //            top: 0px;
+                //        }
+                //    }            
+                //}
+                //
+                //.menu-icon {
+                //    padding: 25px 20px;
+                //    position: relative;
+                //    //float: right;
+                //    cursor: pointer;
+                //    .nav-icon {
+                //        background: rgb(255, 0, 0);
+                //        display: block;
+                //        height: 2px;
+                //        width: 15px;
+                //        position: relative;
+                //        transition: background .2s ease-out;
+                //        &:before {
+                //            background: grey;
+                //            content: "";
+                //            display: block;
+                //            height: 100%;
+                //            width: 100%;
+                //            position: absolute;
+                //            transition: all .2s ease-out;
+                //            top: 5px;
+                //        }
+                //
+                //        &:after {
+                //            background: grey;
+                //            content: "";
+                //            display: block;
+                //            height: 100%;
+                //            width: 100%;
+                //            position: absolute;
+                //            transition: all .2s ease-out;
+                //            top: -5px;
+                //        }
+                //    }
+                //
+                //}
+        .navbar__menu {
+            position: relative;
 
-        nav {
-            //background-color: cornflowerblue;
-            position: fixed;
-            top: 0px;
-            width: 100%;
-            
-            //z-index: 99;
-        
-            .container {
-                width: 80%;
+            @media screen and (max-width: 767px){
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
                 height: 100%;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-        
-                .navbar__logo {
-                    padding: 20px 30px;
-                }
-        
-                .menu-btn {
-                    display: none;
-        
-                    &:checked ~ .navbar__menu {
-                        max-height: 240px;                
-                    }
-        
-                    &:checked ~ .menu-icon .nav-icon {
-                        background: transparent;
-        
-                        &:before {
-                            transform: rotate(-45deg);
-                            top: 0px;
-                        }
-        
-                        &:after {
-                            transform: rotate(45deg);
-                            top: 0px;
-                        }
-                    }            
-                }
-        
-                .menu-icon {
-                    padding: 25px 20px;
-                    position: relative;
-                    //float: right;
-                    cursor: pointer;
-                    .nav-icon {
-                        background: rgb(255, 0, 0);
-                        display: block;
-                        height: 2px;
-                        width: 15px;
-                        position: relative;
-                        transition: background .2s ease-out;
-                        &:before {
-                            background: grey;
-                            content: "";
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                            position: absolute;
-                            transition: all .2s ease-out;
-                            top: 5px;
-                        }
-        
-                        &:after {
-                            background: grey;
-                            content: "";
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                            position: absolute;
-                            transition: all .2s ease-out;
-                            top: -5px;
-                        }
-                    }
-        
-                }
-        
-        
-                .navbar__menu {
-                    margin: 0;
-                    padding-bottom: 90px;
-                    padding-left: 30px;
-                    list-style: none;
-                    //overflow: hidden;
-                    font-family: 'GothamBook';
-                    color: #ffffff;
-                    font-size: 20px;
-        
-                    li {
-                        display: inline-block;
-                        text-transform: uppercase;
-        
-                        a {
-                            height: 100%;
-                            color: #ffffff;
-                            display: block;
-                            padding: 30px;
-                            //border-right: 5px solid #aaa;
-                            text-decoration: none;
-                        }
-                    }
-                }
-            
-            .navbar__menu {
+                box-shadow: -1px 0 4px hsla(190, 64%, 15%, .15);
+                padding: 3rem;
+                transition: .4s;
+            }
+
+            .navbar__menu-items {
+                margin: 0;
+                padding-bottom: 90px;
+                padding-left: 30px;
+                list-style: none;
+                //overflow: hidden;
+                font-family: 'GothamBook';
+                color: #ffffff;
+                font-size: 20px;
                 clear: both;
                 max-height: 0;
                 transition: max-height .2s ease-out;
-            }
-
-            .navbar__social-media {
-                height: 60px;
-                width: 100px;
-                padding: 10px;
-                ul {
-                    height: 100%;
-                    width: 100%;
-                    background-color: coral;
-                    li {
-                        font-size: 20px;
+                
+                li {
+                    display: inline-block;
+                    text-transform: uppercase;
+                
+                    a {
+                        height: 100%;
+                        color: #ffffff;
+                        display: block;
+                        padding: 30px;
+                        //border-right: 5px solid #aaa;
+                        text-decoration: none;
                     }
                 }
             }
         }
+        .nav-close {
+            position: absolute;
+            top: .75rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
+    }
+}
+.show-menu{
+    right: 0;
+}
 
         h1 {
             font-family: 'gothambold1';
@@ -220,7 +227,6 @@ header {
                 animation-delay: .2s;
             }
         }
-    }
 
 
 
@@ -451,9 +457,14 @@ footer {
         clear: none;
         float: right;
         max-height: none;
+        right: -100%;
     }
 
     .menu-icon {
         display: none;
     }
 }
+.show-menu{
+    right: 0;
+    color: rgb(255, 0, 0);
+  }
